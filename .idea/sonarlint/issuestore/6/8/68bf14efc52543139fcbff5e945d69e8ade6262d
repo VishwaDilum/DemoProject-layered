@@ -1,0 +1,9 @@
+
+g	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8÷ó§¬Ê1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÛï¢8İ·¬Ê1
+J
+java:S5411"(Use a primitive boolean expression here.(÷ğûûÿÿÿÿ8İ·¬Ê1
+H
+java:S1168J"+Return an empty collection instead of null.(¥¹ï8¿üÓ­Ê1
+E
+java:S1128"(Remove this unused import 'entity.Item'.(ÏÂã8¿üÓ­Ê1

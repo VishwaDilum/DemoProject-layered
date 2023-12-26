@@ -1,0 +1,43 @@
+
+h	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÀÏİ“Ê1
+h	java:S112”"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÀÏİ“Ê1
+Q
+java:S3740-"/Provide the parametrized type for this generic.(íı’­úÿÿÿÿ8ÀÏİ“Ê1
+Q
+java:S37400"/Provide the parametrized type for this generic.(ÓËøùÿÿÿÿ8ÀÏİ“Ê1
+Q
+java:S37403"/Provide the parametrized type for this generic.(Èâ–úÿÿÿÿ8ÀÏİ“Ê1
+Q
+java:S37406"/Provide the parametrized type for this generic.(ıø–»şÿÿÿÿ8ÀÏİ“Ê1
+Q
+java:S37409"/Provide the parametrized type for this generic.(ıÀ³şÿÿÿÿ8ÀÏİ“Ê1
+w
+java:S2293›"YReplace the type specification in this constructor call with the diamond operator ("<>").(çÖ¸„8ÁÏİ“Ê1
+J
+java:S1604j"(Make this anonymous inner class a lambda(§Ë¸şÿÿÿÿ8ÁÏİ“Ê1
+J
+java:S1604g"(Make this anonymous inner class a lambda(Î™êÿşÿÿÿÿ8ÁÏİ“Ê1
+w
+java:S1104("UMake tableItem a static final constant or non-public and provide accessors if needed.(¤ü¢êüÿÿÿÿ8ÂÏİ“Ê1
+]	java:S125J"<This block of commented-out lines of code should be removed.(›¶çòøÿÿÿÿ8àÏİ“Ê1
+N
+java:S1602V",Remove useless curly braces around statement(ü³§Âşÿÿÿÿ8âÏİ“Ê1
+Y	java:S125€"<This block of commented-out lines of code should be removed.(«òÎ8çÏİ“Ê1
+c
+java:S2147“"ECombine this catch with the one at line 145, which has the same body.(ıàÑÎ8èÏİ“Ê1
+P
+java:S1172­"2Remove this unused method parameter "actionEvent".(öÛç‰8êÏİ“Ê1
+P
+java:S1172³"2Remove this unused method parameter "actionEvent".(è™æÂ8ğÏİ“Ê1
+P
+java:S1172Ó"2Remove this unused method parameter "actionEvent".(­»×Ô8ñÏİ“Ê1
+N
+java:S1128"1Remove this unused import 'bo.custom.CustomerBo'.(ŸàÎÇ8ç€í“Ê1
+N
+java:S1128",Remove this unused import 'dto.CustomerDto'.(ÛàÀÖüÿÿÿÿ8ç€í“Ê1
+Q
+java:S1128"/Remove this unused import 'dao.custom.ItemDao'.(«µÒ£ıÿÿÿÿ8ç€í“Ê1
+Z
+java:S1128"8Remove this unused import 'dao.custom.impl.ItemDaoImpl'.(ä½õ¢ûÿÿÿÿ8ç€í“Ê1
+N
+java:S1144]",Remove this unused private "setData" method.(Úúõÿÿÿÿÿÿ8ç€í“Ê1
