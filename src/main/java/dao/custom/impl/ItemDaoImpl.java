@@ -34,13 +34,13 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public boolean save(Item entity) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO item VALUES(?,?,?,?)";
-        return CrudUtil.execute(sql,entity.getCode(),entity.getDescription(),entity.getUnitprice(),entity.getQtyOnHand());
+        return CrudUtil.execute(sql,entity.getCode(),entity.getDescription(),entity.getUnitPrice(),entity.getQtyOnHand());
     }
 
     @Override
     public boolean update(Item entity) throws SQLException, ClassNotFoundException {
         String sql = "UPDATE item SET description=?, unitprice=?, qtyOnHand=? WHERE code=?";
-        return CrudUtil.execute(sql,entity.getDescription(),entity.getUnitprice(),entity.getQtyOnHand(),entity.getCode());
+        return CrudUtil.execute(sql,entity.getDescription(),entity.getUnitPrice(),entity.getQtyOnHand(),entity.getCode());
     }
 
     @Override

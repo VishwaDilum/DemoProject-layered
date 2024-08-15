@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import dao.util.BoType;
+import db.DBConnection;
 import dto.CustomerDto;
 import dto.ItemDto;
 import dto.tm.CustomerTm;
@@ -27,8 +28,10 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import dao.custom.ItemDao;
-import dao.custom.impl.ItemDaoImpl;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -71,7 +74,6 @@ public class ItemFormController {
     @FXML
     private JFXTextField txtUnitPrice;
 
-    //private ItemDao itemDao = new ItemDaoImpl();
     private ItemBo itemBo = BoFactory.getInstance().getBo(BoType.ITEM);
     ObservableList<ItemTm> tmList = FXCollections.observableArrayList();
 
@@ -85,17 +87,16 @@ public class ItemFormController {
         searchItem();
         tableItem.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
             setData(newValue.getValue());
-
         });
-
     }
 
-    private void setData(CustomerTm newValue) {
+    private void setData(ItemTm newValue) {
         if (newValue != null) {
             txtCode.setEditable(false);
-            txtDes.setText(newValue.getId());
-            txtUnitPrice.setText(newValue.getName());
-            txtQty.setText(newValue.getAddress());
+            txtCode.setText(newValue.getCode());
+            txtDes.setText(newValue.getDesc());
+            txtUnitPrice.setText(String.valueOf(newValue.getUnitPrice()));
+            txtQty.setText(String.valueOf(newValue.getQty()));
         }
     }
 
@@ -114,22 +115,11 @@ public class ItemFormController {
         });
     }
 
-    private void setData(ItemTm newValue) {
-        if (newValue != null) {
-            txtCode.setEditable(false);
-            txtCode.setText(newValue.getCode());
-            txtDes.setText(newValue.getDesc());
-            txtUnitPrice.setText(String.valueOf(newValue.getUnitPrice()));
-            txtQty.setText(String.valueOf(newValue.getQty()));
-        }
-    }
-
     private void loadItemTable() throws SQLException, ClassNotFoundException {
-        //ObservableList<ItemTm>tmList = FXCollections.observableArrayList();
+        tmList.clear();
         List<ItemDto> dtoList = itemBo.allItems();
         for (ItemDto dto : dtoList) {
             JFXButton btn = new JFXButton("Delete");
-
             ItemTm c = new ItemTm(
                     dto.getCode(),
                     dto.getDesc(),
@@ -139,65 +129,60 @@ public class ItemFormController {
             );
 
             btn.setOnAction(actionEvent -> {
-
                 try {
                     deleteItem(c.getCode());
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
+                } catch (SQLException | ClassNotFoundException e) {
                     throw new RuntimeException(e);
                 }
-
             });
 
             tmList.add(c);
         }
-        TreeItem<ItemTm> treeObject = new RecursiveTreeItem<ItemTm>(tmList, RecursiveTreeObject::getChildren);
+        TreeItem<ItemTm> treeObject = new RecursiveTreeItem<>(tmList, RecursiveTreeObject::getChildren);
         tableItem.setRoot(treeObject);
         tableItem.setShowRoot(false);
     }
 
-
-
-
     private void deleteItem(String code) throws SQLException, ClassNotFoundException {
         boolean v = itemBo.deleteItem(code);
-            if (v){
-                new Alert(Alert.AlertType.INFORMATION,"Item Deleted!").show();
-                loadItemTable();
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
-            }
+        if (v) {
+            new Alert(Alert.AlertType.INFORMATION, "Item Deleted!").show();
+            loadItemTable();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
+        }
     }
 
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) borderPane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Dashboard.fxml"))));
-
     }
 
-    public void updateButtonOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException,NullPointerException {
-        boolean isUpdated= false;
+    public void updateButtonOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        boolean isUpdated = false;
         try {
+
+
+
             isUpdated = itemBo.updateItem(new ItemDto(
                     txtCode.getText(),
                     txtDes.getText(),
                     Double.parseDouble(txtUnitPrice.getText()),
                     Integer.parseInt(txtQty.getText())
-                    ));
+
+            ));
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        if (isUpdated){
-            new Alert(Alert.AlertType.INFORMATION,"Item Updated!").show();
+        if (isUpdated) {
+            new Alert(Alert.AlertType.INFORMATION, "Item Updated!").show();
             loadItemTable();
             clearFields();
-        }else{
-            new Alert(Alert.AlertType.ERROR,"Something went wronge !").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
-
-        }
+    }
 
     private void clearFields() {
         tableItem.refresh();
@@ -207,20 +192,31 @@ public class ItemFormController {
         txtQty.clear();
     }
 
-
     public void savebuttonOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        ItemDto c = new ItemDto(txtCode.getText(),
+        ItemDto c = new ItemDto(
+                txtCode.getText(),
                 txtDes.getText(),
                 Double.parseDouble(txtUnitPrice.getText()),
                 Integer.parseInt(txtQty.getText())
         );
         boolean isSaved = itemBo.saveItem(c);
-        if (isSaved){
-            new Alert(Alert.AlertType.INFORMATION,"Customer Saved!").show();
+        if (isSaved) {
+            new Alert(Alert.AlertType.INFORMATION, "Item Saved!").show();
             loadItemTable();
             clearFields();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
+        }
+    }
+
+    public void reportButtonOnAction(ActionEvent actionEvent) {
+        try {
+            JasperDesign design = JRXmlLoader.load("src/main/resources/reports/Item_Reports.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException | ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -50,7 +50,7 @@ public class ItemBoImpl implements ItemBo {
             list.add(new ItemDto(
                     item.getCode(),
                     item.getDescription(),
-                    item.getUnitprice(),
+                    item.getUnitPrice(),
                     item.getQtyOnHand()
             ));
         }

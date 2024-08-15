@@ -21,7 +21,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public OrderDto lastOrder() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM orders ORDER BY id DESC LIMIT 1";
+        String sql = "SELECT * FROM orders ORDER BY orderId DESC LIMIT 1";
         ResultSet resultSet = CrudUtil.execute(sql);
 
         if (resultSet.next()){

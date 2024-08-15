@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="564.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+<AnchorPane fx:id="pane" prefHeight="564.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
    <children>
       <JFXTextField fx:id="txtid" layoutX="39.0" layoutY="50.0" />
       <JFXTextField fx:id="txtName" layoutX="202.0" layoutY="51.0" />
@@ -52,5 +52,10 @@
          </graphic>
       </Button>
       <JFXTextField fx:id="txtSearch" layoutX="39.0" layoutY="101.0" promptText="Search" />
+      <JFXButton layoutX="593.0" layoutY="516.0" onAction="#reportButtonOnAction" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #8328f2;" text="Report">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

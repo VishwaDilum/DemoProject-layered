@@ -49,9 +49,9 @@ public class PlaceOrderFormController {
     public TreeTableColumn colCode;
     public TreeTableColumn colDesc;
     public TreeTableColumn colQty;
-    public TreeTableColumn colAmunt;
     public TreeTableColumn colOption;
     public JFXTreeTableView tblOrder;
+    public TreeTableColumn colAmount;
     private List<CustomerDto> customers;
     private List<ItemDto> items;
     private double tot = 0;
@@ -72,14 +72,13 @@ BorderPane pane;
         colCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("code"));
         colDesc.setCellValueFactory(new TreeItemPropertyValueFactory<>("desc"));
         colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
-        colAmunt.setCellValueFactory(new TreeItemPropertyValueFactory<>("amount"));
+        colAmount.setCellValueFactory(new TreeItemPropertyValueFactory<>("amount"));
         colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
         generateId();
         loadCustomerIds();
         loadItemCodes();
         checkValidQty();
-        //System.out.println(check.size());
-
+        System.out.println(lblOrderID.getText());
 
 
         cmbCustId.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, id) -> {
@@ -256,12 +255,15 @@ BorderPane pane;
                     list
             ));
            boolean qtyUpdate = orderDetailsBo.updateQty(list);
-           boolean isSavedD = orderDetailsBo.saveOrderDetails(list);
-            if (isSaved && isSavedD){
-                new Alert(Alert.AlertType.INFORMATION,"Order Saved!").show();
-            }else{
-                new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
-            }
+           if(isSaved){
+               boolean isSavedD = orderDetailsBo.saveOrderDetails(list);
+               System.out.println("Is Order Save ? "+isSaved);
+               if (isSaved && isSavedD){
+                   new Alert(Alert.AlertType.INFORMATION,"Order Saved!").show();
+               }else{
+                   new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
+               }
+           }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

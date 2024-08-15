@@ -1,5 +1,23 @@
 
+Q
+java:S3740F"/Provide the parametrized type for this generic.(÷îÿÿÿÿÿ8‰ÛŒãÊ1
+~
+java:S1488G"\Immediately return this expression instead of assigning it to the temporary variable "list".(ÄÕÑèøÿÿÿÿ8¹Ç‘ãÊ1
+]	java:S125$"<This block of commented-out lines of code should be removed.(¯…ãûÿÿÿÿ8ØÈüâÊ1
+X	java:S1256"<This block of commented-out lines of code should be removed.(ì¯†ª8ÚÈüâÊ1
+]	java:S125K"<This block of commented-out lines of code should be removed.(ÄµÃùÿÿÿÿ8ËÇ‘ãÊ1
+P
+java:S1128".Remove this unused import 'dao.util.CrudUtil'.(ØÒñ¿üÿÿÿÿ8±’ÄèÊ1
 I
-java:S1128",Remove this unused import 'db.DBConnection'.(Šùà†8ŠŒ€­Ê1
+java:S1128",Remove this unused import 'db.DBConnection'.(Šùà†8²’ÄèÊ1
+[
+java:S1128
+"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬şÿÿÿÿ8²’ÄèÊ1
 Y
-java:S1128	"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8‹Œ€­Ê1
+java:S1128"<Remove this unused import 'org.hibernate.cfg.Configuration'.(ö¬ä8²’ÄèÊ1
+Y
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8²’ÄèÊ1
+K
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8²’ÄèÊ1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8²’ÄèÊ1

@@ -230,3 +230,7 @@ w
 G.idea/sonarlint/issuestore/f/1/f14bad5e68bdfef4c489ba84a4d9c620bc6cb0f1,f\a\fa9518daf58ab1e5b48e106dd17ecfb6f6e24b38
 Å
 Q.idea/sonarlint/securityhotspotstore/f/1/f14bad5e68bdfef4c489ba84a4d9c620bc6cb0f1,f\9\f93d397004cc742444f389e287a84f2c259564c2
+Y
+)src/main/java/dao/util/HibernateUtil.java,e\a\eaca33c06fde41d95c0977c988aecc4139aa0a69
+Y
+)src/main/java/entity/OrderDetailsKey.java,d\8\d8bf35ddbede29bf962753bff8b727d827e0db2f

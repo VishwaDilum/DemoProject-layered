@@ -35,6 +35,7 @@ public class DashboardController {
         timeline.play();
     }
     public void customerButtonOnAction(ActionEvent actionEvent) throws IOException {
+
         Stage stage = (Stage) pane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/CustomerForm.fxml"))));
         stage.setTitle("Customer Form");

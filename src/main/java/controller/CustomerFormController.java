@@ -16,7 +16,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,6 +32,7 @@ import java.util.function.Predicate;
 
 public class CustomerFormController {
 
+    private AnchorPane pane;
     public JFXTextField txtAddress;
     public JFXTextField txtSearch;
     @FXML
@@ -226,4 +234,19 @@ public class CustomerFormController {
         Stage stage = (Stage) tblCustomer.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/Dashboard.fxml"))));
     }
+
+    public void reportButtonOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, JRException {
+        try {
+            JasperDesign design = JRXmlLoader.load("src/main/resources/reports/Customer_Reports.jrxml");
+            //
+            //
+            JasperReport jasperReport = JasperCompileManager.compileReport(design);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint,false);
+        } catch (JRException | ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

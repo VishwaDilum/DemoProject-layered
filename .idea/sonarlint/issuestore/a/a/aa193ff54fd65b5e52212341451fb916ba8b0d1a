@@ -1,43 +1,48 @@
 
-h	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
-h	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
-h	java:S112“"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
-h	java:S112•"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
-h	java:S112µ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
-h	java:S112·"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¯ĞŸÊ1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8İƒÀºÊ1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8İƒÀºÊ1
+h	java:S112™"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8İƒÀºÊ1
+h	java:S112›"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8İƒÀºÊ1
+h	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŞƒÀºÊ1
+h	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŞƒÀºÊ1
+h	java:S112õ"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŞƒÀºÊ1
 L
-java:S3740"/Provide the parametrized type for this generic.(´°æ¸8¯ĞŸÊ1
+java:S3740%"/Provide the parametrized type for this generic.(´°æ¸8ŞƒÀºÊ1
 Q
-java:S3740""/Provide the parametrized type for this generic.(ºšãÿıÿÿÿÿ8¯ĞŸÊ1
+java:S3740("/Provide the parametrized type for this generic.(ºšãÿıÿÿÿÿ8ŞƒÀºÊ1
 L
-java:S3740%"/Provide the parametrized type for this generic.(Œà•®8°ĞŸÊ1
+java:S3740+"/Provide the parametrized type for this generic.(Œà•®8ŞƒÀºÊ1
 L
-java:S3740("/Provide the parametrized type for this generic.(ÚÊØ˜8°ĞŸÊ1
+java:S3740."/Provide the parametrized type for this generic.(ÚÊØ˜8ŞƒÀºÊ1
 Q
-java:S3740+"/Provide the parametrized type for this generic.(ù‚©·üÿÿÿÿ8°ĞŸÊ1
+java:S37401"/Provide the parametrized type for this generic.(ù‚©·üÿÿÿÿ8ŞƒÀºÊ1
 x
-java:S1104"VMake txtAddress a static final constant or non-public and provide accessors if needed.(©ûîùıÿÿÿÿ8±ĞŸÊ1
+java:S1104""VMake txtAddress a static final constant or non-public and provide accessors if needed.(©ûîùıÿÿÿÿ8ßƒÀºÊ1
 r
-java:S1104"UMake txtSearch a static final constant or non-public and provide accessors if needed.(ïò˜§8±ĞŸÊ1
+java:S1104#"UMake txtSearch a static final constant or non-public and provide accessors if needed.(ïò˜§8àƒÀºÊ1
 j
-java:S2095Õ"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8ÖĞŸÊ1
+java:S2095Û"GUse try-with-resources or close this "Statement" in a "finally" clause.(ôÅ¹Îıÿÿÿÿ8ï½ÀºÊ1
 I
-java:S1602C",Remove useless curly braces around statement(ŠĞå™8ÜĞŸÊ1
+java:S1602I",Remove useless curly braces around statement(ŠĞå™8ìƒÀºÊ1
 I
-java:S1602L",Remove useless curly braces around statement(»ı›§8İĞŸÊ1
+java:S1602R",Remove useless curly braces around statement(»ı›§8ïƒÀºÊ1
 i
-java:S1871T"LThis branch's code block is the same as the block for the branch on line 82.(­«õ”8ŞĞŸÊ1
+java:S1871Z"LThis branch's code block is the same as the block for the branch on line 88.(­«õ”8ğƒÀºÊ1
 W
-java:S1117n":Rename "tmList" which hides the field declared at line 57.(ı·¿Ÿ8áĞŸÊ1
+java:S1117t":Rename "tmList" which hides the field declared at line 63.(ı·¿Ÿ8öƒÀºÊ1
 c
-java:S2147ˆ"ECombine this catch with the one at line 134, which has the same body.(ıàÑÎ8âĞŸÊ1
-I
-java:S1602~",Remove useless curly braces around statement(ë¹¬8ãĞŸÊ1
+java:S2147"ECombine this catch with the one at line 140, which has the same body.(ıàÑÎ8öƒÀºÊ1
+J
+java:S1602„",Remove useless curly braces around statement(ë¹¬8ùƒÀºÊ1
 c
-java:S2147”"ECombine this catch with the one at line 146, which has the same body.(ıàÑÎ8åĞŸÊ1
+java:S2147š"ECombine this catch with the one at line 152, which has the same body.(ıàÑÎ8ûƒÀºÊ1
 œ
-java:S1130¢"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(Äş¶‘úÿÿÿÿ8æĞŸÊ1
+java:S1130¨"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(Äş¶‘úÿÿÿÿ8¾ÀºÊ1
 c
-java:S2147¶"ECombine this catch with the one at line 180, which has the same body.(ıàÑÎ8èĞŸÊ1
+java:S2147¼"ECombine this catch with the one at line 186, which has the same body.(ıàÑÎ8„ÀºÊ1
 P
-java:S1172á"2Remove this unused method parameter "actionEvent".(öÛç‰8íĞŸÊ1
+java:S1172ç"2Remove this unused method parameter "actionEvent".(öÛç‰8Š„ÀºÊ1
+P
+java:S1172ì"2Remove this unused method parameter "actionEvent".(¥ÿšŸ8—„ÀºÊ1
+o
+java:S1128"MRemove this unused import 'net.sf.jasperreports.engine.design.JRDesignQuery'.(“ˆØäıÿÿÿÿ8¾ÀºÊ1

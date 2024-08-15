@@ -20,7 +20,7 @@ public class OrderDetailsDaoImpl implements OrderDetailsDao {
         boolean isDetailsSaved = true;
         for (OrderDetailsDto dto:list) {
             String sql = "INSERT INTO orderdetail VALUES(?,?,?,?)";
-            Boolean S = CrudUtil.execute(sql,dto.getOrderId(),dto.getItemCode(),dto.getQty(),dto.getUnitPrice());
+            Boolean S = CrudUtil.execute(sql,dto.getItemCode(),dto.getOrderId(),dto.getQty(),dto.getUnitPrice());
 
             if(!S){
                 isDetailsSaved = false;
