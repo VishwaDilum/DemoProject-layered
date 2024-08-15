@@ -81,13 +81,13 @@ public class OrderTablesController {
     private void setData(OrdersTm newValue) {
         loadOrderDetails();
         Exid = newValue.getId();
+        System.out.println(Exid);
     }
 
     private void loadOrderDetails() {
         ObservableList<OrderDetailsDto> tmList = FXCollections.observableArrayList();
-            String sql = "SELECT * FROM orderDetail WHERE orderid = '" + Exid + "'";
+        String sql = "SELECT * FROM orderDetail WHERE order_id = '" + Exid + "'";  // Adjust column name here
         try {
-            //Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade", "root", "2005");
             Statement stm = DBConnection.getInstance().getConnection().createStatement();
             ResultSet result = stm.executeQuery(sql);
 
@@ -95,8 +95,8 @@ public class OrderTablesController {
                 OrderDetailsDto c = new OrderDetailsDto(
                         result.getString(1),
                         result.getString(2),
-                        Integer.parseInt(String.valueOf(result.getInt(3))),
-                        Double.parseDouble(String.valueOf(result.getDouble(4)))
+                        result.getInt(3),
+                        result.getDouble(4)
                 );
                 tmList.add(c);
             }
@@ -107,6 +107,7 @@ public class OrderTablesController {
             throw new RuntimeException(e);
         }
     }
+
 
     private void searchFilter() {
         FilteredList<OrdersTm> filterData= new FilteredList<>(tmList,e->true);
